@@ -1,0 +1,21 @@
+function increaseVolumeByThreeTimes(length, width, height) {
+  var currentVolume = length * width * height;
+  var increasedVolume = currentVolume * 3;
+
+  var scaleFactor = Math.cbrt(increasedVolume / currentVolume);
+  var newLength = length * scaleFactor;
+  var newWidth = width * scaleFactor;
+  var newHeight = height * scaleFactor;
+
+  return { length: newLength, width: newWidth, height: newHeight };
+}
+
+// Example usage:
+var length = 5;
+var width = 3;
+var height = 2;
+
+var newDimensions = increaseVolumeByThreeTimes(length, width, height);
+console.log("New Length: " + newDimensions.length);
+console.log("New Width: " + newDimensions.width);
+console.log("New Height: " + newDimensions.height);
